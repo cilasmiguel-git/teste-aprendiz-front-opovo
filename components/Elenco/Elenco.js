@@ -7,7 +7,7 @@ class AppElenco extends HTMLElement {
                         <h2 id="elenco-titulo">Elenco</h2>
                         <button class="ver-mais">Ver mais</button>
                     </div>
-                    <div class="owl-carousel owl-theme elenco-carousel">
+                    <div class="elenco-carousel">
                         <article class="ator">
                             <img src="assets/img/actors/Margot Robbie.png" alt="Margot Robbie" loading="lazy">
                             <h3>Margot Robbie</h3>
@@ -53,19 +53,44 @@ class AppElenco extends HTMLElement {
             </section>
         `;
 
-        if (window.$) {
-            $(this).find(".elenco-carousel").owlCarousel({
-                loop: false,
-                margin: 20,
-                nav: false,
-                dots: false,
-                responsive: {
-                    0: { items: 1.5 },
-                    768: { items: 3.5 },
-                    1024: { items: 6 }
-                }
-            });
-        }
+        // O navegador controla o Touch no celular nativamente GPU-Accelerated 
+        // Abaixo adicionamos um script Vanilla extremamente leve para simular o "Arrasto por Mouse" no Computador:
+
+        const slider = this.querySelector('.elenco-carousel');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.style.cursor = 'grab';
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            slider.style.cursor = 'grabbing';
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+            // Desliga a trava pontual temporariamente para deixar rolar solto
+            slider.style.scrollSnapType = 'none'; 
+        });
+
+        slider.addEventListener('mouseleave', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            slider.style.scrollSnapType = 'x mandatory'; // Religa o Imã
+        });
+
+        slider.addEventListener('mouseup', () => {
+            isDown = false;
+            slider.style.cursor = 'grab';
+            slider.style.scrollSnapType = 'x mandatory'; // Religa o Imã
+        });
+
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 1.5; // Velocidade do arrasto
+            slider.scrollLeft = scrollLeft - walk;
+        });
     }
 }
 customElements.define('app-elenco', AppElenco);

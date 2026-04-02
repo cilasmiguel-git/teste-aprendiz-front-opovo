@@ -12,13 +12,28 @@
 }
 
 .elenco-carousel {
-    margin-top: 1rem;
+    display: flex;
+    gap: 20px;
+    margin-top: 1.5rem;
+    padding-bottom: 20px; /* Área para não cortar sombras/barras */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Fluidez máxima no Safari/iPhone */
+    
+    /* Esconder a barra de rolagem visualmente, mas manter a função */
+    scrollbar-width: none; 
 }
 
-/* Transparência esfumaçada no final (lado direito) do carrossel */
-.elenco-carousel .owl-stage-outer {
+.elenco-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Transparência esfumaçada no final (lado direito) do carrossel indicando que tem mais atores horizontais */
+.elenco-carousel {
     -webkit-mask-image: linear-gradient(to right, black calc(100% - 80px), transparent 100%);
     mask-image: linear-gradient(to right, black calc(100% - 80px), transparent 100%);
+    user-select: none; /* Bloqueia a seleção azul irritante do Windows enquanto arrasta */
 }
 
 .ator {
@@ -34,6 +49,10 @@
     border-radius: 50%;
     margin: 0 auto 1rem auto;
     object-fit: cover;
+    -webkit-user-drag: none; /* Bloqueia o navegador de tentar arrastar a foto pra fora do site como um arquivo */
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
 }
 
 .ator h3 {
