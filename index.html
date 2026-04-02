@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing page do filme Barbie (2023). Descubra a sinopse, elenco, resenhas e muito mais.">
+    
+    <!-- Open Graph Redes Sociais -->
+    <meta property="og:title" content="Barbie (2023) - O Filme">
+    <meta property="og:description" content="No fabuloso mundo da Barbieland, uma boneca que não é perfeita o suficiente para viver lá parte para o mundo real.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://seusite.com/barbie">
+    <meta property="og:image" content="https://seusite.com/assets/images/barbie-poster.webp">
+    
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- Font Awesome para Ícones de Acessibilidade Lindos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts League Spartan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>Barbie (2023)</title>
+    <!-- O estilo agora é um hub importador dos componentes -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Web Components instanciados limpos -->
+    <app-header></app-header>
+
+    <main>
+        <app-ficha-tecnica></app-ficha-tecnica>
+        <app-elenco></app-elenco>
+        <app-resenhas></app-resenhas>
+    </main>
+
+    <app-footer></app-footer>
+    <app-acessibilidade></app-acessibilidade>
+    <app-cookies></app-cookies>
+
+    <!-- Dependências do Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <!-- Scripts de Componentização (Sem CORS problem, carrega localmente seguro) -->
+    <script src="components/Header/Header.js" defer></script>
+    <script src="components/FichaTecnica/FichaTecnica.js" defer></script>
+    <script src="components/Elenco/Elenco.js" defer></script>
+    <script src="components/Resenhas/Resenhas.js" defer></script>
+    <script src="components/Footer/Footer.js" defer></script>
+    <script src="components/Acessibilidade/Acessibilidade.js" defer></script>
+    <script src="components/Cookies/Cookies.js" defer></script>
+    
+    <!-- Script Principal -->
+    <script src="assets/js/main.js" defer></script>
+</body>
+</html>
