@@ -1,0 +1,73 @@
+.ficha-tecnica {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+}
+
+.poster {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    border-radius: 12px;
+}
+
+.detalhes {
+    width: 100%;
+}
+
+.filme-titulo {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.ano-filme {
+    font-weight: 400;
+    color: rgba(63, 35, 5, 0.5); /* Opacidade reduzida simulando cor mais clara */
+}
+
+.meta-row {
+    margin-bottom: 1.5rem;
+}
+
+.meta-row h3, .meta-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.3rem;
+}
+
+.meta-row p, .meta-item p {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .meta-grid {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2rem;
+        column-gap: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ficha-tecnica {
+        flex-direction: row;
+        align-items: flex-start;
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: 4rem;
+    }
+}
