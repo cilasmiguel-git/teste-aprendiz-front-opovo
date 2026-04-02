@@ -1,0 +1,52 @@
+.elenco-bg {
+    background-color: var(--bg-alt); /* Color DFD7BF applied */
+    padding-top: 1.5rem;   /* Bastante reduzido o fundo pro celular verde caixa */
+    padding-bottom: 1rem; /* Bastante reduzido o fundo pro celular */
+}
+
+@media (min-width: 1024px) {
+    .elenco-bg {
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+}
+
+.elenco-carousel {
+    margin-top: 1rem;
+}
+
+/* Transparência esfumaçada no final (lado direito) do carrossel */
+.elenco-carousel .owl-stage-outer {
+    -webkit-mask-image: linear-gradient(to right, black calc(100% - 80px), transparent 100%);
+    mask-image: linear-gradient(to right, black calc(100% - 80px), transparent 100%);
+}
+
+.ator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ator img {
+    width: 190px !important; /* Força 190px ignorando os 100% do OwlCarousel */
+    height: 190px !important;
+    border-radius: 50%;
+    margin: 0 auto 1rem auto;
+    object-fit: cover;
+}
+
+.ator h3 {
+    font-size: 24px;
+    color: var(--text-color);
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.ator p {
+    font-size: 24px;
+    color: var(--text-color);
+    font-weight: 400;
+    margin: 0;
+}
