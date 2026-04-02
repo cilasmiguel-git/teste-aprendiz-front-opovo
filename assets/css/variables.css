@@ -1,0 +1,17 @@
+:root {
+    /* Paleta Oficial do Figma: */
+    --unnamed-color-f2ead3: #F2EAD3;
+    --unnamed-color-dfd7bf: #DFD7BF;
+    --unnamed-color-a4907c: #A4907C;
+    --unnamed-color-3f2305: #3F2305;
+    --unnamed-color-f2f2f2: #F2F2F2;
+    --unnamed-color-333333: #333333;
+
+    /* Uso Semântico: */
+    --bg-color: var(--unnamed-color-f2ead3);
+    --bg-alt: var(--unnamed-color-dfd7bf);
+    --text-color: var(--unnamed-color-333333);
+    --accent-color: var(--unnamed-color-3f2305);
+    --text-light: var(--unnamed-color-a4907c);
+    --footer-bg: var(--unnamed-color-3f2305);
+}

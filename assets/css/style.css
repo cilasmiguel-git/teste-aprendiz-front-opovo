@@ -1,0 +1,11 @@
+@import url('variables.css');
+@import url('base.css');
+
+/* Componentes */
+@import url('../../components/Header/header.css');
+@import url('../../components/FichaTecnica/fichatecnica.css');
+@import url('../../components/Elenco/elenco.css');
+@import url('../../components/Resenhas/resenhas.css');
+@import url('../../components/Footer/footer.css');
+@import url('../../components/Acessibilidade/acessibilidade.css');
+@import url('../../components/Cookies/cookies.css');
