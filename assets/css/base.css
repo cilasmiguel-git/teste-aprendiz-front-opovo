@@ -6,6 +6,7 @@
 
 html {
     background-color: #1a1a1a; /* Fundo cinza super escuro neutro para simular uma tela limitadora em 4K/Super Zoom */
+    overflow-x: hidden; /* CORTA IMPACÁVELMENTE O VAZAMENTO DE ANIMAÇÕES OFF-CANVAS NOS CELULARES */
 }
 
 body {

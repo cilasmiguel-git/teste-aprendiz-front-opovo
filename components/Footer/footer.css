@@ -4,12 +4,13 @@
     opacity: 1;
 }
 
+/* Mobile (Padrão) - Compacto */
 .footer-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .footer-logo {
@@ -18,13 +19,13 @@
 }
 
 .footer-logo img {
-    width: 192px;
-    height: 60px;
+    width: 130px; /* Reduzido lindamente para celular */
+    height: 40px;
     object-fit: contain;
     opacity: 1;
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
-/* Mobile (Padrão) - 1 Coluna  */
 .footer-links {
     display: flex;
     flex-direction: column;
@@ -34,11 +35,11 @@
 .footer-links a {
     color: #F2EAD3;
     text-align: left;
-    font: normal normal normal 24px/27px 'League Spartan', sans-serif;
+    font: normal normal normal 16px/20px 'League Spartan', sans-serif; /* Encolhe para mobile para não gritar */
     letter-spacing: 0px;
     opacity: 1;
     text-decoration: none;
-    transition: opacity 0.3s;
+    transition: font-size 0.3s ease, opacity 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -47,6 +48,15 @@
 
 /* Tablet Responsividade - 2 Colunas */
 @media (min-width: 768px) {
+    .footer-logo img {
+        width: 160px; /* Escala média do logo no tablet */
+        height: 50px;
+    }
+
+    .footer-links a {
+        font-size: 18px; /* Dá uma crescida sutil no Tablet */
+    }
+
     .footer-links {
         display: grid;
         grid-template-rows: repeat(5, auto);
@@ -63,6 +73,8 @@
     }
 
     .footer-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
         flex-direction: row;
         justify-content: flex-start;
         align-items: flex-start;
@@ -71,6 +83,16 @@
 
     .footer-logo {
         flex: none;
+    }
+
+    .footer-logo img {
+        width: 192px; /* Restaura proporção oficial original do Figma para telas grandes */
+        height: 60px;
+    }
+
+    .footer-links a {
+        font-size: 24px; /* Restaura os 24px do Figma no Desktop */
+        line-height: 27px;
     }
 
     .footer-links {

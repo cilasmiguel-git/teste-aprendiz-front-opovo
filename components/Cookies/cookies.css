@@ -97,3 +97,15 @@
 .cookie-btn.recusar:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
+
+/* ==========================================================================
+   Desktop Responsividade (Ancora o Banner no Canto Esquerdo Inferior)
+   ========================================================================== */
+@media (min-width: 1024px) {
+    .cookie-banner {
+        right: auto; /* Quebra a trava da direita e anula o 'margin: auto' */
+        margin: 0;
+        left: 40px; /* Gruda elegamente no canto esquerdo */
+        bottom: 40px; /* Fica um pouco mais alto nas telas grandes */
+    }
+}
