@@ -1,0 +1,85 @@
+.main-footer {
+    width: 100%;
+    background: #3F2305 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.footer-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 192px;
+    height: 60px;
+    object-fit: contain;
+    opacity: 1;
+}
+
+/* Mobile (Padrão) - 1 Coluna  */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.footer-links a {
+    color: #F2EAD3;
+    text-align: left;
+    font: normal normal normal 24px/27px 'League Spartan', sans-serif;
+    letter-spacing: 0px;
+    opacity: 1;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+/* Tablet Responsividade - 2 Colunas */
+@media (min-width: 768px) {
+    .footer-links {
+        display: grid;
+        grid-template-rows: repeat(5, auto);
+        grid-auto-flow: column;
+        column-gap: 50px; 
+        row-gap: 1.2rem;
+    }
+}
+
+/* Desktop Responsividade - 3 Colunas na mesma linha da Logo */
+@media (min-width: 1024px) {
+    .main-footer {
+        height: 265px; /* Tamanho exato no desktop conforme Figma */
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .footer-logo {
+        flex: none;
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-rows: repeat(3, auto);
+        grid-auto-columns: 295px; /* Largura da coluna no Desktop */
+        grid-auto-flow: column;
+        column-gap: 0;
+        row-gap: 40px; /* Altura calculada para Suporte bater com top: 2055px */
+        margin-left: 123px; /* Distância calculada Left 655 vs Logo */
+    }
+}
