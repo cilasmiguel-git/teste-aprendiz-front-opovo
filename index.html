@@ -12,9 +12,14 @@
     <meta property="og:url" content="https://seusite.com/barbie">
     <meta property="og:image" content="https://seusite.com/assets/images/barbie-poster.webp">
     
-    <!-- Owl Carousel CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- SEO e Indexação Avançada -->
+    <link rel="canonical" href="https://seusite.com/barbie">
+    <meta name="theme-color" content="#3F2305">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Barbie (2023) | O Filme">
+    <meta name="twitter:description" content="Descubra os bastidores, elenco e as principais resenhas de Barbie (2023).">
     
     <!-- Font Awesome para Ícones de Acessibilidade Lindos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,9 +29,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
     
-    <title>Barbie (2023)</title>
+    <title>PLAYCUBE | Barbie (2023) | Ficha Técnica Oficial e Elenco</title>
+    <!-- Favicon (Ícone da Aba do Navegador) -->
+    <link rel="icon" type="image/png" href="assets/img/image2.PNG">
+    
     <!-- O estilo agora é um hub importador dos componentes -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- JSON-LD (SEO Avançado para Motores de Busca entenderem que é um Filme) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Movie",
+      "name": "Barbie",
+      "dateCreated": "2023",
+      "director": {
+        "@type": "Person",
+        "name": "Greta Gerwig"
+      },
+      "actor": [
+        {"@type": "Person", "name": "Margot Robbie"},
+        {"@type": "Person", "name": "Ryan Gosling"}
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -42,10 +68,6 @@
     <app-footer></app-footer>
     <app-acessibilidade></app-acessibilidade>
     <app-cookies></app-cookies>
-
-    <!-- Dependências do Owl Carousel -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Scripts de Componentização (Sem CORS problem, carrega localmente seguro) -->
     <script src="components/Header/Header.js" defer></script>
