@@ -1,0 +1,72 @@
+.acessibilidade-widget {
+    position: fixed;
+    right: 0;
+    top: 150px; /* Bem mais para cima, logo abaixo do nível do Header */
+    /* Removido o translateY(-50%) para ele não ficar centralizado e sim ficar ancorado pelo top */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Mantém os painéis colados estritamente à borda direita */
+    z-index: 9999;
+    filter: drop-shadow(-2px 4px 6px rgba(0,0,0,0.2));
+}
+
+.acessibilidade-btn {
+    background-color: #0b3d91; /* Azul Típico de Acessibilidade */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse; /* Ícone colado na direita */
+    height: 44px; /* Mais discreto */
+    width: 48px; /* Mais discreto (fechado) */
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    padding: 0;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.acessibilidade-btn.btn-top {
+    border-radius: 12px 0 0 0;
+}
+
+.acessibilidade-btn.btn-bottom {
+    border-radius: 0 0 0 12px;
+}
+
+.acessibilidade-divider {
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* Linha divisória branca suave */
+}
+
+/* Estado Expandido */
+.acessibilidade-btn:hover {
+    width: 250px; /* Expande para mostrar o texto inteiro */
+    border-radius: 12px 0 0 12px; /* Transforma as duas pontas da esquerda em curvas elegantes ao saltar */
+}
+
+/* Ajustes do Ícone da FontAwesome */
+.acessibilidade-btn i {
+    min-width: 48px; /* Base acompanhando novo tamanho do botão */
+    font-size: 20px; /* Ícone um pouquinho menor para ficar alinhado elegante e não grosseiro */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.acessibilidade-btn span {
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+    margin-right: 15px; /* Espaçamento do ícone */
+}
+
+.acessibilidade-btn:hover span {
+    opacity: 1;
+    transition-delay: 0.1s; /* Revela logo que a caixa cresce um pouco */
+}
