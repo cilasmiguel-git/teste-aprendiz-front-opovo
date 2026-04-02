@@ -1,0 +1,76 @@
+/* Estrutura Responsiva em Flex/Grid para as Resenhas */
+.resenhas-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Distância entre os cards verticalmente no Celular e Tablet */
+}
+
+.card {
+    background-color: var(--bg-alt); /* Cor mais escura para o card sobre o fundo claro */
+    padding: 1.5rem; /* Padding reduzido para celular (encaixa melhor na tela menor) */
+    border-radius: 12px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaço entre texto, autor e rodapé do card */
+}
+
+.resenha-conteudo p {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.resenha-autor p {
+    font-size: 20px;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.resenha-autor strong {
+    font-weight: 700;
+}
+
+.resenha-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: var(--text-color);
+    margin-top: auto; /* Empurra pro rodapé */
+}
+
+.resenha-footer strong {
+    font-weight: 700;
+}
+
+/* Tablet (Primeira imagem - Cards empilhados mas padding mais generoso) */
+@media (min-width: 768px) {
+    .card {
+        padding: 2.5rem;
+    }
+}
+
+/* Desktop Responsividade (Cards lado a lado) */
+@media (min-width: 1024px) {
+    .resenhas-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Coloca as 2 resenhas lado a lado */
+        gap: 20px;
+    }
+}
+
+/* Animações de Entrada Dinâmicas */
+.resenhas-list .card.resenha {
+    opacity: 0;
+    transform: translateX(100px); /* Inicia 100px para a direita (escondido) */
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.resenhas-list .card.resenha.visible {
+    opacity: 1;
+    transform: translateX(0); /* Desliza para o local de origem */
+}
